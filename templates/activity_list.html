@@ -1,0 +1,27 @@
+$def with (activity)
+
+<h2>Activity Listing</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Phone</th>
+        <th>Action</th>
+        <th>Category</th>
+        <th>Component</th>
+        <th>Details</th>
+        <th>Timestamp</th>
+    </tr>
+$for entry in activity:
+   <tr>
+    <td>$entry.ID</td>
+    <td>$entry.PHONE</td>
+    <td>$entry.ACTION</td>
+    <td>$entry.CATEGORY</td>
+    <td>$entry.COMPONENT</td>
+    <td>$entry.DETAILS</td>
+    <td>$entry.TIMESTAMP</td>
+
+    </tr>
+</table>
+
+<a href="/activity">Add Activity Manually</a>

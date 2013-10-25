@@ -1,10 +1,13 @@
 import web, datetime
 
 
-db = web.database(dbn="sqlite", db="db/sniffer")
+db = web.database(dbn="sqlite", db="db/sniffer.db")
 
 def get_phones():
     return db.select('phone', order='id')
+
+def create_phone(name):
+    return db.insert('phone', name=name, last_com=datetime.datetime.utcnow())
 
 def get_phone(id):
     try:
@@ -13,9 +16,8 @@ def get_phone(id):
         return None
 
 def get_activity():
-    return sdb.select('activity', order='id')
+    return db.select('activity', order='id')
 
-def create_activity(phone_id, act_type, details):
-    db.insert('activity', activity_type=act_type, details=details, phone=phone_id, timestamp=datetime.datetime.utcnow())
-
+def create_activity(phone_id, action, category, component, details):
+    db.insert('activity', action=action, category=category, component=component, details=details, phone=phone_id, timestamp=datetime.datetime.utcnow())
 

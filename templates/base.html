@@ -8,14 +8,35 @@ $def with (page)
         <title>ISOT Lab Sniffer</title>
     <style>
     </style>
+
+<style>
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 9px;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 20px;
+}
+th {
+    font-size: 12px;
+    font-weight: normal;
+    color: #039;
+    padding: 10px 8px;
+}
+td {
+color: #669;
+padding: 2px;
+}
+</style>
+
 </head>
 <body>
 
 <h1>Sniffer Web Interface</h1>
 <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/new">Phones</a></li>
-    <li><a href="/new">Activity</a></li>
+    <li><a href="/phones/list">Phones</a></li>
+    <li><a href="/activity/list">Activity</a></li>
 </ul>
 <hr />
 $:page

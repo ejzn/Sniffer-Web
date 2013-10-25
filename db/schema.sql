@@ -1,20 +1,16 @@
 CREATE TABLE PHONE(
-   ID INT PRIMARY KEY     NOT NULL,
+   ID INTEGER PRIMARY KEY     AUTOINCREMENT,
    NAME           TEXT    NOT NULL,
    LAST_COM       datetime default current_timestamp
 );
 
 CREATE TABLE ACTIVITY(
-   ID INT PRIMARY KEY     NOT NULL,
-   ACTIVITY_TYPE           INT    NOT NULL,
-   TIMESTAMP       datetime default current_timestamp,
+   ID INTEGER PRIMARY KEY     AUTOINCREMENT,
+   ACTION           TEXT    NOT NULL,
+   CATEGORY           TEXT    NOT NULL,
+   COMPONENT           TEXT    NOT NULL,
    DETAILS TEXT,
+   TIMESTAMP       datetime default current_timestamp,
    PHONE INT NOT NULL,
    FOREIGN KEY(PHONE) REFERENCES phone(ID)
-   FOREIGN KEY(ACTIVITY_TYPE) REFERENCES ACTIVITY_TYPE(ID)
-);
-
-CREATE TABLE ACTIVITY_TYPE(
-   ID INT PRIMARY KEY     NOT NULL,
-   NAME           TEXT    NOT NULL
 );

@@ -1,8 +1,13 @@
 $def with (phones)
 
+<h2>Phones Connected</h2>
 <ul>
 $for phone in phones:
     <li>
-        <a href="#">Phone</a>
+        <p>$phone.ID
+        $phone.NAME
+        $phone.LAST_COM</p>
     </li>
 </ul>
+
+<a href="/phone">Add Phone</a>
