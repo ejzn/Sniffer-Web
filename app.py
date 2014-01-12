@@ -77,6 +77,7 @@ class Activity:
         web.form.Textbox('category', web.form.notnull, description="category:"),
         web.form.Textbox('component', web.form.notnull, description="component:"),
         web.form.Textbox('details', web.form.notnull, description="details:"),
+        web.form.Textbox('timestamp', web.form.notnull, description="timestamp:"),
         web.form.Button('Add Activity'),
     )
 
@@ -99,7 +100,7 @@ class Activity:
         if not form.validates():
             activity = model.get_activity()
             return render.activity(activity, form)
-        model.create_activity(form.d.phone_id, form.d.action, form.d.category, form.d.component, form.d.details)
+        model.create_activity(form.d.phone_id, form.d.action, form.d.category, form.d.component, form.d.details, form.d.timestamp)
         raise web.seeother('/activity/list')
 
 

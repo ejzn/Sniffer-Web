@@ -18,6 +18,6 @@ def get_phone(id):
 def get_activity():
     return db.select('activity', order='id')
 
-def create_activity(phone_id, action, category, component, details):
-    db.insert('activity', action=action, category=category, component=component, details=details, phone=phone_id, timestamp=datetime.datetime.utcnow())
+def create_activity(phone_id, action, category, component, details, timestamp):
+    db.insert('activity', action=action, category=category, component=component, details=details, phone=phone_id, timestamp=timestamp)
 
